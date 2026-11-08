@@ -61,7 +61,7 @@ def show_phone(args: list[str], contacts: dict[str, str]) -> str:
     matches = find_contacts(name, contacts)
 
     if not matches:
-        return "Phone not found"
+        raise KeyError(name)
 
     if len(matches) == 1:
         return matches[0][1]
